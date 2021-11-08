@@ -4,6 +4,8 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - run: sudo echo "10.132.15.197 development.appsweep.guardsquare.com" | sudo tee -a /etc/hosts
       - run: ./gradlew app:assembleRelease
       - run: ./gradlew uploadToAppSweepRelease --stacktrace
