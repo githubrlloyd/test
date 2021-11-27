@@ -49,6 +49,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
 
+String getAppSweepApiKey() {
+   def propFile = rootProject.file("./local.properties")
+   def properties = new Properties()
+   properties.load(new FileInputStream(propFile))
+   return properties['APPSWEEP_API_KEY']
+}
+
 appsweep {
-    apiKey "gs_appsweep_ztvZwjh_3qh3lnG56mrR5ri74oT9Vr9GOPINGlVS"
+    apiKey getAppSweepApiKey()
 }
