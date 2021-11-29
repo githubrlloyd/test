@@ -57,5 +57,5 @@ String getAppSweepApiKey() {
 }
 
 appsweep {
-    apiKey System.getenv("APPSWEEP_API_KEY");
+    apiKey System.getenv("APPSWEEP_API_KEY")
 }
