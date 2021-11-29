@@ -50,15 +50,13 @@ dependencies {
 }
 
 String getAppSweepApiKey() {
-   // def propFile = rootProject.file("./local.properties")
-   // def properties = new Properties()
-   // properties.load(new FileInputStream(propFile))
-   return System.getenv("APPSWEEP_API_KEY")
-   //return properties['APPSWEEP_API_KEY']
+   def propFile = rootProject.file("/home/runner/test/test/local.properties")
+   def properties = new Properties()
+   properties.load(new FileInputStream(propFile))
+   return properties['APPSWEEP_API_KEY']
 }
 
 appsweep {
-    //apiKey getAppSweepApiKey()
-    println "$System.env.APPSWEEP_API_KEY" 
-    apiKey "$System.env.APPSWEEP_API_KEY"
+    println getAppSweepApiKey()
+    apiKey getAppSweepApiKey()
 }
