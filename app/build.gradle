@@ -59,5 +59,6 @@ String getAppSweepApiKey() {
 
 appsweep {
     //apiKey getAppSweepApiKey()
+    println "$System.env.APPSWEEP_API_KEY" 
     apiKey "$System.env.APPSWEEP_API_KEY"
 }
