@@ -16,6 +16,6 @@ jobs:
         run: cat $GITHUB_WORKSPACE/local.properties
         
       - name: Upload app to AppSweep with Gradle
-      - uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v2
         with:
           arguments: uploadToAppSweep
