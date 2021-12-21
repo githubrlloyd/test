@@ -56,7 +56,12 @@ String getAppSweepApiKey() {
    return properties['APPSWEEP_API_KEY']
 }
 
+String getAppSweepSecret() {
+   return System.getenv('APPSWEEP_API_KEY')
+}
+
 appsweep {
-    println getAppSweepApiKey()
+    println "AppSweep Secret: " + getAppSweepSecret()
+    println "AppSweep Property: " + getAppSweepApiKey()
     apiKey getAppSweepApiKey()
 }
