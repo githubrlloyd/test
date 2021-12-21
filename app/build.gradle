@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id "com.guardsquare.appsweep" version "0.1.5"
+    id "com.guardsquare.appsweep" version "0.1.7"
 }
 android {
     compileSdkVersion 30
@@ -47,21 +47,4 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-}
-
-String getAppSweepApiKey() {
-   def propFile = rootProject.file("/home/runner/work/test/test/local.properties")
-   def properties = new Properties()
-   properties.load(new FileInputStream(propFile))
-   return properties['APPSWEEP_API_KEY']
-}
-
-String getAppSweepSecret() {
-   return System.getenv('APPSWEEP_API_KEY')
-}
-
-appsweep {
-    println "AppSweep Secret: " + getAppSweepSecret()
-    println "AppSweep Property: " + getAppSweepApiKey()
-    apiKey getAppSweepApiKey()
 }
